@@ -26,6 +26,11 @@
 
 html { -webkit-text-size-adjust: 100%; }
 
+/* the hero button jumps down the page, so ease it rather than teleport */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
 body {
   margin: 0;
   background: var(--paper);
@@ -106,7 +111,7 @@ main { padding: 0 var(--gutter); }
 
 .wrap { max-width: 62rem; margin: 0 auto; }
 
-.section { padding: 3.25rem 0; }
+.section { padding: 3.25rem 0; scroll-margin-top: 1.5rem; }
 
 .eyebrow {
   font-family: var(--display);
