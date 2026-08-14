@@ -10,7 +10,7 @@ permalink: /awards/
 
     <ul class="awards">
       {% for award in site.data.awards %}
-        <li>
+        <li id="{{ award.name | slugify }}">
           <span class="award-name">
             {{ award.name }}
             <span>{{ award.org }}</span>

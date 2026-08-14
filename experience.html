@@ -9,7 +9,7 @@ permalink: /experience/
     <p class="eyebrow">Experience</p>
 
     {% for job in site.data.experience %}
-      <div class="entry">
+      <div class="entry" id="{{ job.org | slugify }}">
         <h3>{{ job.org }}</h3>
         <p class="role">{{ job.role }}</p>
         <p class="meta">{{ job.dates }}</p>

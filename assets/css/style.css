@@ -113,8 +113,7 @@ main { padding: 0 var(--gutter); }
 
 .wrap { max-width: 62rem; margin: 0 auto; }
 
-.section { padding: 4rem 0; border-bottom: 1.5px solid var(--rule); }
-.section:last-of-type { border-bottom: 0; }
+.section { padding: 3.25rem 0; }
 
 .eyebrow {
   font-family: var(--display);
@@ -124,15 +123,6 @@ main { padding: 0 var(--gutter); }
   text-transform: uppercase;
   color: var(--pine);
   margin: 0 0 1.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-.eyebrow::after {
-  content: "";
-  flex: 1;
-  height: 1.5px;
-  background: var(--rule);
 }
 
 h1, h2, h3 {
@@ -150,7 +140,6 @@ h1, h2, h3 {
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
   padding: clamp(2.5rem, 7vw, 5rem) 0 clamp(2.5rem, 6vw, 4rem);
-  border-bottom: 1.5px solid var(--rule);
 }
 
 .hi {
@@ -362,37 +351,76 @@ h1, h2, h3 {
 .card .summary { font-size: 0.94rem; color: var(--slate); margin: 0 0 1rem; }
 .card .tags { margin-top: auto; }
 
-/* ---------- page tiles ---------- */
-.tiles {
+/* ---------- scrolling page tickers ---------- */
+.tickers { display: grid; gap: 0.85rem; }
+
+.ticker-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  gap: 0.9rem;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--card);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius);
+  padding: 0.8rem 1.15rem;
+  overflow: hidden;
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+.ticker-row:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--mint);
 }
 
-.tile {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+.ticker-label {
   font-family: var(--display);
   font-size: 1.05rem;
   font-weight: 700;
   text-decoration: none;
   color: var(--ink);
-  background: var(--card);
-  border: 1.5px solid var(--ink);
-  border-radius: var(--radius);
-  padding: 1rem 1.15rem;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  white-space: nowrap;
 }
-.tile-arrow { color: var(--pine); transition: transform 0.18s ease; }
-.tile:hover, .tile:focus-visible {
-  color: var(--pine-deep);
-  background: var(--mint-soft);
-  transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0 var(--mint);
+.ticker-label:hover { color: var(--pine); }
+.tile-arrow { color: var(--pine); display: inline-block; transition: transform 0.18s ease; }
+.ticker-label:hover .tile-arrow { transform: translateX(3px); }
+
+/* fade the ends so items slide in and out rather than popping */
+.ticker {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 2rem, #000 calc(100% - 2rem), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 2rem, #000 calc(100% - 2rem), transparent);
 }
-.tile:hover .tile-arrow { transform: translateX(3px); }
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 30s linear infinite;
+}
+.ticker-group { display: flex; }
+
+/* stop on hover or keyboard focus, so the links can actually be clicked */
+.ticker-row:hover .ticker-track,
+.ticker-track:focus-within { animation-play-state: paused; }
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-right: 0.85rem;
+  white-space: nowrap;
+}
+.ticker-item a {
+  font-size: 0.92rem;
+  color: var(--slate);
+  text-decoration: none;
+}
+.ticker-item a:hover { color: var(--pine); text-decoration: underline; }
+.ticker-sep { color: var(--mint); font-size: 1.1rem; line-height: 1; }
+
+@keyframes ticker-scroll { to { transform: translateX(-50%); } }
+
+@media (max-width: 34rem) {
+  .ticker-row { grid-template-columns: 1fr; gap: 0.5rem; }
+}
 
 /* ---------- entries ---------- */
 .entry {
@@ -470,6 +498,7 @@ h1, h2, h3 {
   border-bottom: 1.5px solid var(--rule);
 }
 .awards li:first-child { border-top: 1.5px solid var(--rule); }
+.awards li:target { background: var(--pink-soft); box-shadow: 0 0 0 0.5rem var(--pink-soft); border-radius: 2px; }
 .awards .award-name { font-size: 1rem; font-weight: 500; }
 .awards .award-name span { display: block; color: var(--slate); font-size: 0.88rem; font-weight: 400; }
 .awards .award-year {
