@@ -9,7 +9,7 @@ permalink: /projects/
     <p class="eyebrow">Projects</p>
 
     {% for project in site.data.projects %}
-      <div class="entry">
+      <div class="entry" id="{{ project.name | slugify }}">
         <h3>
           {% if project.links.first %}
             <a href="{{ project.links.first.url }}">{{ project.name }}</a>

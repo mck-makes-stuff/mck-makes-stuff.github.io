@@ -14,14 +14,17 @@ title: About
       </h1>
 
       <p class="lede">
-        I'm a math and computer science student at <strong>Yale</strong>. I work on AI
-        assurance, which mostly means testing whether a system does the thing it is
-        supposed to do.
+        I'm a math and computer science student at <strong>Yale University</strong>. I
+        work on AI assurance, a nebulous but imperative undertaking that involves
+        rigorous testing to assess how safe, capable, and aligned AI systems are.
       </p>
       <p class="lede">
         I spent two internships at the <strong>Johns Hopkins University Applied Physics
         Laboratory</strong> building evaluation methods for operational and healthcare
-        AI. The work I like best sits between statistics and language.
+        AI. The work I like best has to do with math, human-centered computing,
+        linguistics, and public health. My work is interdisciplinary because my
+        grounding force is service of humanity. Humans are not confined to any single
+        discipline.
       </p>
 
       <div class="hero-links">
@@ -31,10 +34,7 @@ title: About
     </div>
 
     <figure class="explorer" id="explorer">
-      <div class="explorer-head">
-        <p class="explorer-title">Does this test question actually tell you anything?</p>
-        <span class="explorer-badge">Drag me</span>
-      </div>
+      <p class="explorer-title">Does this test question actually tell you anything?</p>
 
       <svg viewBox="0 0 320 186" id="irt-plot" role="img"
            aria-label="An interactive item characteristic curve. Two draggable handles control how hard the question is and how sharply it separates strong models from weak ones.">
@@ -60,11 +60,13 @@ title: About
 
       <figcaption>
         This is an item characteristic curve from a two-parameter logistic model. Each
-        dot is a model, and the curve gives its chance of getting one test question
-        right. When the curve is flat, every model scores about the same and the
-        question can't tell them apart. A steep curve sorts them. Working out which
-        benchmark questions do which was a lot of my job at APL. The numbers here are
-        made up and the models are anonymized.
+        dot is an AI/ML model, and the curve gives its chance of getting one test
+        question right. When the curve is flat, every model scores about the same and
+        the question can't tell them apart. A steep curve sorts them. The pink dot shows
+        the point where a model has a 50% chance of answering correctly. Working out
+        what makes a benchmark or test strategy good for AI systems was a big part of my
+        job at APL. The numbers and models here are made up but give a sense for the
+        kind of work I do.
       </figcaption>
     </figure>
   </section>
@@ -73,14 +75,8 @@ title: About
     <p class="eyebrow">What I've built</p>
     <div class="cards">
       {% for project in site.data.projects %}
-        <article class="card">
-          <h3>
-            {% if project.links.first %}
-              <a href="{{ project.links.first.url }}">{{ project.name }}</a>
-            {% else %}
-              {{ project.name }}
-            {% endif %}
-          </h3>
+        <a class="card" href="{{ '/projects/' | relative_url }}#{{ project.name | slugify }}">
+          <h3>{{ project.name }}</h3>
           <p class="meta">{{ project.meta }}</p>
           <p class="summary">{{ project.summary }}</p>
           {% if project.tags %}
@@ -88,32 +84,22 @@ title: About
               {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
             </ul>
           {% endif %}
-        </article>
+        </a>
       {% endfor %}
     </div>
-    <p class="linkrow"><a href="{{ '/projects/' | relative_url }}">All projects &rarr;</a></p>
   </section>
 
   <section class="section">
-    <p class="eyebrow">Education</p>
-
-    <div class="entry">
-      <h3>Yale University</h3>
-      <p class="role">B.S. in Computer Science and Mathematics</p>
-      <p class="meta">Expected May 2030 · New Haven, CT</p>
-      <ul>
-        <li>Yale AI Alignment fellowship: an eight-week AI safety curriculum covering alignment, scalable oversight, AI control, mechanistic interpretability, and evaluations.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <h3>The Madeira School</h3>
-      <p class="role">High School Diploma</p>
-      <p class="meta">June 2026 · McLean, VA</p>
-      <ul>
-        <li>Coursework through multivariable calculus, linear algebra, advanced statistics, and four years of computer science.</li>
-        <li>Co-head of Girls Who Code and of Sweet Ti a cappella, softball co-captain, and newsletter editor for Tech@Madeira.</li>
-      </ul>
+    <p class="eyebrow">Look around</p>
+    <div class="tiles">
+      {% for item in site.nav %}
+        {% unless item.url == "/" %}
+          <a class="tile" href="{{ item.url | relative_url }}">
+            <span>{{ item.title }}</span>
+            <span class="tile-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        {% endunless %}
+      {% endfor %}
     </div>
   </section>
 
