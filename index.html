@@ -163,5 +163,6 @@ title: About
 
 </div>
 
-<script src="{{ '/assets/js/explorer.js' | relative_url }}" defer></script>
-<script src="{{ '/assets/js/ticker.js' | relative_url }}" defer></script>
+{%- assign v = site.time | date: '%s' -%}
+<script src="{{ '/assets/js/explorer.js' | relative_url }}?v={{ v }}" defer></script>
+<script src="{{ '/assets/js/ticker.js' | relative_url }}?v={{ v }}" defer></script>

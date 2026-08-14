@@ -6,20 +6,24 @@
   <title>{% if page.title and page.url != "/" %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }} · {{ site.tagline }}{% endif %}</title>
   <meta name="description" content="{{ site.description }}">
   <meta name="theme-color" content="#F2EFE9">
-  <link rel="icon" href="{{ '/assets/img/logo.png' | relative_url }}" type="image/png">
+  {%- comment -%}
+    ?v= is the build time. Pages serves assets with a 10 minute cache and no
+    version in the filename, so without this a deploy can leave a browser
+    pairing new HTML with the previous stylesheet.
+  {%- endcomment -%}
+  {%- assign v = site.time | date: '%s' -%}
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}?v={{ v }}" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Caveat+Brush&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ v }}">
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="masthead">
-  <a class="wordmark" href="{{ '/' | relative_url }}">
-    <img src="{{ '/assets/img/logo.png' | relative_url }}" alt="Gail McKinney — home" width="56" height="56">
-  </a>
+  <a class="wordmark" href="{{ '/' | relative_url }}">Gail McKinney</a>
   <nav aria-label="Primary">
     {% for item in site.nav %}
       <a href="{{ item.url | relative_url }}"

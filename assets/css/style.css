@@ -63,27 +63,20 @@ a:hover { color: var(--ink); }
   gap: 0.75rem 1.5rem;
   align-items: center;
   justify-content: space-between;
-  padding: 0.55rem var(--gutter);
+  padding: 1.1rem var(--gutter);
   border-bottom: 1.5px solid var(--ink);
   background: var(--paper);
 }
 
 .wordmark {
-  display: inline-flex;
-  align-items: center;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.015em;
   text-decoration: none;
-  line-height: 0;
-  border-radius: 50%;
+  color: var(--ink);
 }
-
-.wordmark img {
-  width: 5.5rem;
-  height: 5.5rem;
-  display: block;
-  border-radius: 50%;
-  transition: transform 0.18s ease;
-}
-.wordmark:hover img { transform: rotate(-5deg) scale(1.04); }
+.wordmark:hover { color: var(--pine); }
 
 .masthead nav {
   display: flex;
@@ -543,7 +536,6 @@ h1, h2, h3 {
 @media (max-width: 34rem) {
   .masthead { flex-direction: column; align-items: flex-start; }
   .masthead nav { gap: 0.3rem; margin-left: -0.75rem; }
-  .wordmark img { width: 4.5rem; height: 4.5rem; }
   .explorer { box-shadow: 4px 4px 0 var(--mint); }
 }
 
