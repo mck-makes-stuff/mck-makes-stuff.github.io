@@ -1,0 +1,44 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+
+<div class="wrap">
+  <section class="section">
+    <p class="eyebrow">Projects</p>
+
+    {% for project in site.data.projects %}
+      <div class="entry">
+        <h3>
+          {% if project.links.first %}
+            <a href="{{ project.links.first.url }}">{{ project.name }}</a>
+          {% else %}
+            {{ project.name }}
+          {% endif %}
+        </h3>
+        <p class="meta">{{ project.meta }}</p>
+
+        <p class="summary">{{ project.summary }}</p>
+
+        <ul>
+          {% for point in project.points %}<li>{{ point }}</li>{% endfor %}
+        </ul>
+
+        {% if project.tags %}
+          <ul class="tags">
+            {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if project.links %}
+          <p class="linkrow">
+            {% for link in project.links %}
+              <a href="{{ link.url }}">{{ link.text }}</a>{% unless forloop.last %} <span aria-hidden="true">·</span> {% endunless %}
+            {% endfor %}
+          </p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+</div>

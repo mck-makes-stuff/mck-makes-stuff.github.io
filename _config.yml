@@ -1,0 +1,32 @@
+title: Gail McKinney
+tagline: Mathematics and AI assurance
+description: >-
+  Gail McKinney is a Yale student studying mathematics and computer science,
+  with research experience in AI evaluation and assurance.
+url: "https://mck-makes-stuff.github.io"
+baseurl: ""
+
+github_username: mck-makes-stuff
+email: gailmckinney00@gmail.com
+
+nav:
+  - title: About
+    url: /
+  - title: Experience
+    url: /experience/
+  - title: Projects
+    url: /projects/
+  - title: Awards
+    url: /awards/
+
+plugins:
+  - jekyll-seo-tag
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

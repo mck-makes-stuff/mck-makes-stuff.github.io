@@ -1,0 +1,23 @@
+---
+layout: default
+title: Awards
+permalink: /awards/
+---
+
+<div class="wrap">
+  <section class="section">
+    <p class="eyebrow">Awards</p>
+
+    <ul class="awards">
+      {% for award in site.data.awards %}
+        <li>
+          <span class="award-name">
+            {{ award.name }}
+            <span>{{ award.org }}</span>
+          </span>
+          <span class="award-year">{{ award.year }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>

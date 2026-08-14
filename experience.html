@@ -1,0 +1,37 @@
+---
+layout: default
+title: Experience
+permalink: /experience/
+---
+
+<div class="wrap">
+  <section class="section">
+    <p class="eyebrow">Experience</p>
+
+    {% for job in site.data.experience %}
+      <div class="entry">
+        <h3>{{ job.org }}</h3>
+        <p class="role">{{ job.role }}</p>
+        <p class="meta">{{ job.dates }}</p>
+
+        {% if job.summary %}<p class="summary">{{ job.summary }}</p>{% endif %}
+
+        {% if job.points %}
+          <ul>
+            {% for point in job.points %}<li>{{ point }}</li>{% endfor %}
+          </ul>
+        {% endif %}
+
+        {% for sub in job.roles %}
+          <div class="subentry">
+            <p class="role">{{ sub.role }}</p>
+            <p class="meta">{{ sub.dates }}</p>
+            <ul>
+              {% for point in sub.points %}<li>{{ point }}</li>{% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </section>
+</div>

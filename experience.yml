@@ -1,0 +1,35 @@
+- org: Johns Hopkins University Applied Physics Laboratory
+  role: AI Assurance Research Intern
+  dates: June 2025 – August 2026
+  summary: >-
+    Two internships in AI assurance research, working on evaluation
+    methodology for operational and healthcare AI systems.
+  roles:
+    - role: Pathways Program
+      dates: June 2026 – August 2026
+      points:
+        - Supported independent verification and validation of a healthcare AI program on the data and analysis teams, building test infrastructure and methodology.
+        - Implemented a two-parameter logistic item response theory model in Python across ten frontier models, estimating item discrimination parameters to quantify how well common benchmarks separate model ability.
+        - Built a patient simulator and Synthea-based electronic health record pipeline generating birth-to-present records for 50,000 synthetic patients.
+        - Designed and supervised a human-machine comparison study for a transcription and summarization tool, coordinating roughly fifteen team members to establish ground truth and defining the metrics used to score machine output against it.
+        - Applied methods from natural language processing, psychometrics, and agentic misalignment research to system validation workflows.
+    - role: ASPIRE Program
+      dates: June 2025 – May 2026
+      points:
+        - Designed CLARION, a multi-agent Python and Flask system in which agents systematically compare responses to resolve ambiguity in natural language guidance.
+        - Built a Python tool using natural language processing and rule-based scoring to assess AI-generated medical responses across six health communication metrics, validated by comparing a retrieval-augmented model against a general one.
+        - Presented a poster at the APL Intelligent Systems Symposium.
+
+- org: United States House of Representatives
+  role: Congressional Intern, Office of the Minority Whip
+  dates: October – November 2024
+  points:
+    - Presented a legislative proposal on opioid addiction treatment to congressional staff.
+    - Provided constituent services, contributed to the weekly Whip newsletter, and compiled briefing notes and election analysis.
+
+- org: Riverside Baptist Church
+  role: Volunteer
+  dates: February 2024 – Present
+  points:
+    - Lead Sunday morning lessons for children, focused on artistic expression and identity.
+    - Communicate with parents and guardians about programming.

@@ -1,0 +1,48 @@
+- name: Crash Cash
+  meta: Personal project · 2026
+  summary: >-
+    A browser-based sandbox for learning personal finance by doing. Take a job,
+    open accounts, run up a credit card, file taxes, and watch what happens.
+    The mistakes are free, which is the point.
+  points:
+    - Implemented 2025 federal tax brackets, FICA with the wage cap, a FICO-style score built from the published factor weights, and interest-first amortization on four kinds of debt.
+    - Built the simulation engine as pure JavaScript with no dependencies, covered by unit tests in Node and pytest.
+    - Documented every modeling simplification in-app rather than hiding it, since a teaching tool that quietly lies about its own limits teaches the wrong thing.
+  tags: [JavaScript, Simulation, Unit testing]
+  links:
+    - text: Live site
+      url: https://mck-makes-stuff.github.io/crash-cash/
+    - text: Source
+      url: https://github.com/mck-makes-stuff/crash-cash
+
+- name: Madeira Course Catalog
+  meta: The Madeira School · 2026
+  summary: >-
+    A course planning app for students building a four-year academic plan.
+    Browse the catalog, drag courses into grade year columns, and watch
+    distribution and block requirements fill in as you go.
+  points:
+    - Worked with the school's academic office as stakeholders across several rounds of iteration, incorporating their feedback on course data, requirement logic, and planning workflow.
+    - Handled the awkward parts of a real catalog: locked courses that auto-populate by entry year, seasonal athletic blocks with multiple selections, and live block and credit counters.
+    - Built with plain HTML, CSS, and JavaScript, with plan state persisted in the browser.
+  tags: [JavaScript, Interface design, Stakeholder work]
+  links:
+    - text: Live site
+      url: https://mck-makes-stuff.github.io/mad-courses/
+    - text: Source
+      url: https://github.com/mck-makes-stuff/mad-courses
+
+- name: Object Detection for Autonomous Driving
+  meta: Inspirit AI Scholars · 2025
+  summary: >-
+    A five-model comparison for autonomous driving perception, presented as a
+    review show so a mixed audience of students, parents, and instructors could
+    follow the tradeoffs.
+  points:
+    - Worked up from a perceptron baseline through sliding windows, a convolutional network built from scratch in PyTorch, VGG16 with transfer learning, and YOLO.
+    - Evaluated each approach on accuracy, overfitting behavior, and real-time viability. Sliding windows cost far more computation without improving accuracy, which turned out to be the most useful result.
+    - Completed the capstone independently after the rest of the group left the program.
+  tags: [PyTorch, Computer vision, Model evaluation]
+  links:
+    - text: Watch the presentation
+      url: https://www.youtube.com/watch?v=37J1svFGk9U
