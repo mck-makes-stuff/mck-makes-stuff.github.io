@@ -4,13 +4,12 @@ Source for my personal site, live at
 [mck-makes-stuff.github.io](https://mck-makes-stuff.github.io).
 
 I'm Gail McKinney. I study mathematics and computer science at Yale and work on
-AI assurance, mostly evaluation methodology. The site collects my background,
+AI, mostly evaluation methodology. The site collects my background,
 projects, and a bit about what I find interesting.
 
 ## built with
 
-A static [Jekyll](https://jekyllrb.com) site, hosted on GitHub Pages. No build
-step beyond what Pages runs on its own.
+A static [Jekyll](https://jekyllrb.com) site, hosted on GitHub Pages. 
 
 Page content lives in `_data/` as YAML, so the templates in the repo root stay
 thin and adding an entry means editing a data file rather than markup. Styles
