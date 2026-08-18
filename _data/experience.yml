@@ -1,10 +1,3 @@
-- org: Riverside Baptist Church
-  role: Volunteer
-  dates: February 2024 – Present
-  points:
-    - Lead Sunday morning lessons for children, focused on artistic expression and identity.
-    - Communicate with parents and guardians about programming.
-  
 - org: Johns Hopkins University Applied Physics Laboratory
   role: AI Assurance Research Intern
   dates: June 2025 – August 2026
@@ -15,11 +8,10 @@
     - role: Pathways Program Intern
       dates: June 2026 – August 2026
       points:
-        - Supported independent verification and validation of a healthcare AI program on the data and analysis teams, building test infrastructure and methodology.
-        - Implemented a two-parameter logistic item response theory model in Python across ten frontier models, estimating item discrimination parameters to quantify how well common benchmarks separate model ability.
-        - Built a patient simulator and Synthea-based electronic health record pipeline generating birth-to-present records for 50,000 synthetic patients.
-        - Designed and supervised a human-machine comparison study for a transcription and summarization tool, coordinating roughly fifteen team members to establish ground truth and defining the metrics used to score machine output against it.
-        - Applied methods from NLP, psychometrics, and agentic misalignment research to system validation workflows, briefing resulting test methods to sponsors and external researchers.
+        - Developed sponsor-facing technical products and testing frameworks for AI evaluation projects.
+        - Implemented methodologies from emerging literature to support project work.
+        - Made technical presentations to senior experts in AI assurance; iterated based on their feedback.
+        - Further details available in resume upon request.
     - role: ASPIRE Program Intern
       dates: June 2025 – May 2026
       points:
@@ -27,13 +19,20 @@
         - Built a Python tool using natural language processing and rule-based scoring to assess AI-generated medical responses across six health communication metrics, validated by comparing a retrieval-augmented model against a general one.
         - Presented a poster at the APL Intelligent Systems Symposium (2025).
 
+- org: Riverside Baptist Church
+  role: Volunteer
+  dates: February 2024 – August 2026
+  points:
+    - Lead Sunday morning Bible lessons for children, focused on artistic expression.
+    - Communicate with parents and guardians about programming.
+
 - org: The Madeira School
   roles:
     - role: Head Student Admissions Representative (“STAR”)
       dates: August 2025 – June 2026
       points:
         - Led team of ~25 STARs, delegating tasking and facilitating communication.
-        - Worked closely with admissions staff to recruit new families through marketing strategies and personalized interactions. 
+        - Worked closely with admissions staff to recruit new families through marketing strategies and personalized interactions.
     - role: Student Admissions Representative (“STAR”)
       dates: August 2023 – July 2025
       points:
