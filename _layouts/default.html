@@ -4,8 +4,52 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title and page.url != "/" %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }} · {{ site.tagline }}{% endif %}</title>
-  <meta name="description" content="{{ site.description }}">
   <meta name="theme-color" content="#F2EFE9">
+  <meta name="google-site-verification" content="DnOPZx0cJOiTuVTQGggZqFp5MiZXj4UZkVDZj8wskoE" />
+
+  {%- comment -%}
+    title=false keeps the hand-written <title> above; the plugin still supplies
+    the description, canonical url, Open Graph and Twitter card tags.
+  {%- endcomment -%}
+  {% seo title=false %}
+
+  {%- if page.url == "/" -%}
+  {%- comment -%}
+    Person markup tells Google the site, the LinkedIn profile and the GitHub
+    account are one entity, which is what a search for the name relies on.
+  {%- endcomment -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}{{ site.baseurl }}/",
+    "image": "{{ site.url }}{{ site.baseurl }}/assets/img/logo.png",
+    "description": {{ site.description | strip_newlines | strip | jsonify }},
+    "email": "mailto:{{ site.email }}",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Yale University"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "The Madeira School"
+    },
+    "knowsAbout": [
+      "AI assurance",
+      "AI evaluation",
+      "Item response theory",
+      "Mathematics",
+      "Computer science"
+    ],
+    "sameAs": [
+      {%- for link in site.social.links %}
+      "{{ link }}"{% unless forloop.last %},{% endunless %}
+      {%- endfor %}
+    ]
+  }
+  </script>
+  {%- endif -%}
   {%- comment -%}
     ?v= is the build time. Pages serves assets with a 10 minute cache and no
     version in the filename, so without this a deploy can leave a browser

@@ -6,6 +6,16 @@ description: >-
 url: "https://mck-makes-stuff.github.io"
 baseurl: ""
 
+author: Gail McKinney
+logo: /assets/img/logo.png
+image: /assets/img/logo.png
+
+social:
+  name: Gail McKinney
+  links:
+    - https://www.linkedin.com/in/gail-mckinney/
+    - https://github.com/mck-makes-stuff
+
 github_username: mck-makes-stuff
 github_url: https://github.com/mck-makes-stuff
 email: gailmckinney00@gmail.com
@@ -25,6 +35,13 @@ nav:
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/logo.png
 
 sass:
   style: compressed
